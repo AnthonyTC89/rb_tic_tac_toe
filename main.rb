@@ -251,3 +251,30 @@ class Main
         return false
     end
 end
+
+#the game start, until the game has a winner continue the game 
+loop do
+    main = Main.new()
+    main.show_rules() 
+    main.select_player_mark()
+    main.board.show_board()
+    while (main.board.have_space()) do
+        player_turn = main.turn()
+        loop do
+            number = main.select_number()
+            break if main.board.save_choise_player(player_turn, number)
+        end
+        main.board.show_board()
+        main.winner = main.check_winnner()
+        if main.winner
+            break;
+        end
+    end
+    if main.winner
+        main.show_winner(player_turn)
+    elsif
+        main.show_draw()
+    end
+    break if main.winner
+end
+puts "THANKS FOR PLAYING TIC TAC TOE"
