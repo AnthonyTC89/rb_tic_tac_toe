@@ -191,4 +191,63 @@ class Main
         end
         return number
     end
+
+    #the function shows the Rules of the game
+    def show_draw()
+        puts "DRAW"
+    end
+​
+    #The function shows a message when the game has a winner
+    def show_winner(player)
+        puts "Winner: " + player.name
+    end
+​
+    
+    #the function returns the player who have the turn
+    def turn()
+        if @player1.turn
+            @player1.turn = false
+            @player2.turn = true
+            puts @player1.name + " turn"
+            return @player1
+        elsif @player2.turn
+            @player2.turn = false
+            @player1.turn = true
+            puts @player2.name + " turn"
+            return @player2
+        end
+    end
+​
+    #This section is the winning condition of the game
+    #The function compare the content of the Grid 
+    #e.g. if the Grid has:
+    # | - | - | - |     # | - | - | - |
+    # | X | X | X |     # | X | O | X |
+    # | - | - | - |     # | - | - | - |
+    # | O | 5 | O |     # | 4 | X | 6 | 
+    # | - | - | - |     # | - | - | - |
+    # | 7 | 8 | 9 |     # | X | 8 | O |
+    # | - | - | - |     # | - | - | - |
+    # the winner is the Player with the mark "X"
+    def check_winnner()
+        arr_b = @board.main_board.flatten
+        if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
+            return true
+        elsif arr_b[3] == arr_b[4] && arr_b[4] == arr_b[5]
+            return true
+        elsif arr_b[6] == arr_b[7] && arr_b[7] == arr_b[8]
+            return true
+        elsif arr_b[0] == arr_b[3] && arr_b[3] == arr_b[6]
+            return true
+        elsif arr_b[1] == arr_b[4] && arr_b[4] == arr_b[7]
+            return true
+        elsif arr_b[2] == arr_b[5] && arr_b[5] == arr_b[8]
+            return true
+        elsif arr_b[0] == arr_b[4] && arr_b[4] == arr_b[8]
+            return true
+        elsif arr_b[2] == arr_b[4] && arr_b[4] == arr_b[6]
+            return true
+        end
+        return false
+    end
 end
