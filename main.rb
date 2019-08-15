@@ -3,7 +3,6 @@ class Player
     #name ["Player N°1", "Player N°2"]
     #turn [true, false]
     attr_accessor :identity, :name, :turn
-​
     def initialize(identity, name, turn)    
         @identity = identity  
         @name = name  
@@ -149,7 +148,13 @@ class Main
 
     #Show the rules of the game at the beginning
     def show_rules()
-        puts "RULES"
+        puts "*******WELCOME AND GET READY FOR A ROUND OF TIC TAC TOE*******"
+        puts "PLEASE: make sure to follow the instruction bellow"
+        puts "STEP ONE: Two players are needed for a session: Player one and Player two"
+        puts "STEP TWO: The winner has to align atleast three marks veritically, horizontally or obliguely"
+        puts "STEP THREE: Players are not allowed to repeat their choice or select an already selected space"
+        puts "STEP FOUR: The game is a draw in case all the spaces of the board are used up and the round restarted"
+        puts "***********Have fun*************"
     end
 
     #The Player N°1 have the option to select the kind of mark in the game
@@ -191,18 +196,17 @@ class Main
         end
         return number
     end
-
     #the function shows the Rules of the game
     def show_draw()
-        puts "DRAW"
+        puts "No more avalaible spaces, consider it a draw"
+        puts "The game will be re-started"
+        puts "loading................"
+        puts "Press any key to continue"
     end
-​
     #The function shows a message when the game has a winner
     def show_winner(player)
         puts "Winner: " + player.name
     end
-​
-    
     #the function returns the player who have the turn
     def turn()
         if @player1.turn
@@ -217,7 +221,6 @@ class Main
             return @player2
         end
     end
-​
     #This section is the winning condition of the game
     #The function compare the content of the Grid 
     #e.g. if the Grid has:
@@ -251,3 +254,30 @@ class Main
         return false
     end
 end
+
+#the game start, until the game has a winner continue the game 
+loop do
+    main = Main.new()
+    main.show_rules() 
+    main.select_player_mark()
+    main.board.show_board()
+    while (main.board.have_space()) do
+        player_turn = main.turn()
+        loop do
+            number = main.select_number()
+            break if main.board.save_choise_player(player_turn, number)
+        end
+        main.board.show_board()
+        main.winner = main.check_winnner()
+        if main.winner
+            break;
+        end
+    end
+    if main.winner
+        main.show_winner(player_turn)
+    elsif
+        main.show_draw()
+    end
+    break if main.winner
+end
+puts "THANKS FOR PLAYING TIC TAC TOE"
