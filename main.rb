@@ -3,7 +3,6 @@ class Player
     #name ["Player N°1", "Player N°2"]
     #turn [true, false]
     attr_accessor :identity, :name, :turn
-​
     def initialize(identity, name, turn)    
         @identity = identity  
         @name = name  
@@ -191,18 +190,14 @@ class Main
         end
         return number
     end
-
     #the function shows the Rules of the game
     def show_draw()
         puts "DRAW"
     end
-​
     #The function shows a message when the game has a winner
     def show_winner(player)
         puts "Winner: " + player.name
     end
-​
-    
     #the function returns the player who have the turn
     def turn()
         if @player1.turn
@@ -217,7 +212,6 @@ class Main
             return @player2
         end
     end
-​
     #This section is the winning condition of the game
     #The function compare the content of the Grid 
     #e.g. if the Grid has:
