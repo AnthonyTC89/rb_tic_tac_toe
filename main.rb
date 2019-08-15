@@ -19,7 +19,7 @@ class Board
         @main_board = [["1","2","3"],["4","5","6"],["7","8","9"]]
     end  
 
-        #this function show the content of the grid
+    #this function show the content of the grid
     #for the beginning:
     # | - | - | - |
     # | 1 | 2 | 3 |
@@ -135,5 +135,119 @@ class Board
                 return true
             end
         end
+    end
+end
+
+class Main
+    attr_accessor :player1, :player2, :board, :winner
+    def initialize()
+        @player1 = Player.new('', 'Player N°1', true)  
+        @player2 = Player.new('', 'Player N°2', false)
+        @board = Board.new()  
+        @winner = false
+    end
+
+    #Show the rules of the game at the beginning
+    def show_rules()
+        puts "RULES"
+    end
+
+    #The Player N°1 have the option to select the kind of mark in the game
+    #This function finish when "X" or "O" were selected, othercases are not allowed
+    #After the choising the function show the Mark of each Player and a message for
+    #the beginning of the game
+    def select_player_mark()
+        puts("PLAYER N° 1, select a mark: (X) or (O)")
+        mark = "X"
+        loop do
+            mark = gets.chomp.upcase
+            cond = true
+            if mark != "X" && mark != "O"
+                p mark.upcase
+                puts "Write a correct mark"
+                cond = false
+            end
+            break if cond
+        end
+        @player1.identity = mark
+        @player2.identity = mark == 'X' ? 'O' : 'X'
+        puts (@player1.name + " is: " + player1.identity)
+        puts (@player2.name + " is: " + player2.identity)
+        puts "Start TIC TAC TOE"
+    end
+
+    #The Players have the option to choose a number in the Grid
+    #The numbers allowed are between 1 and 9
+    def select_number()
+        number = 0
+        loop do
+            number = gets.to_i
+            cond = true
+            if number > 9 || number < 1
+                puts "Write a correct number"
+                cond = false
+            end
+            break if cond
+        end
+        return number
+    end
+
+    #the function shows the Rules of the game
+    def show_draw()
+        puts "DRAW"
+    end
+​
+    #The function shows a message when the game has a winner
+    def show_winner(player)
+        puts "Winner: " + player.name
+    end
+​
+    
+    #the function returns the player who have the turn
+    def turn()
+        if @player1.turn
+            @player1.turn = false
+            @player2.turn = true
+            puts @player1.name + " turn"
+            return @player1
+        elsif @player2.turn
+            @player2.turn = false
+            @player1.turn = true
+            puts @player2.name + " turn"
+            return @player2
+        end
+    end
+​
+    #This section is the winning condition of the game
+    #The function compare the content of the Grid 
+    #e.g. if the Grid has:
+    # | - | - | - |     # | - | - | - |
+    # | X | X | X |     # | X | O | X |
+    # | - | - | - |     # | - | - | - |
+    # | O | 5 | O |     # | 4 | X | 6 | 
+    # | - | - | - |     # | - | - | - |
+    # | 7 | 8 | 9 |     # | X | 8 | O |
+    # | - | - | - |     # | - | - | - |
+    # the winner is the Player with the mark "X"
+    def check_winnner()
+        arr_b = @board.main_board.flatten
+        if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
+            return true
+        elsif arr_b[3] == arr_b[4] && arr_b[4] == arr_b[5]
+            return true
+        elsif arr_b[6] == arr_b[7] && arr_b[7] == arr_b[8]
+            return true
+        elsif arr_b[0] == arr_b[3] && arr_b[3] == arr_b[6]
+            return true
+        elsif arr_b[1] == arr_b[4] && arr_b[4] == arr_b[7]
+            return true
+        elsif arr_b[2] == arr_b[5] && arr_b[5] == arr_b[8]
+            return true
+        elsif arr_b[0] == arr_b[4] && arr_b[4] == arr_b[8]
+            return true
+        elsif arr_b[2] == arr_b[4] && arr_b[4] == arr_b[6]
+            return true
+        end
+        return false
     end
 end
