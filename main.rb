@@ -148,7 +148,13 @@ class Main
 
     #Show the rules of the game at the beginning
     def show_rules()
-        puts "RULES"
+        puts "*******WELCOME AND GET READY FOR A ROUND OF TIC TAC TOE*******"
+        puts "PLEASE: make sure to follow the instruction bellow"
+        puts "STEP ONE: Two players are needed for a session: Player one and Player two"
+        puts "STEP TWO: The winner has to align atleast three marks veritically, horizontally or obliguely"
+        puts "STEP THREE: Players are not allowed to repeat their choice or select an already selected space"
+        puts "STEP FOUR: The game is a draw in case all the spaces of the board are used up and the round restarted"
+        puts "***********Have fun*************"
     end
 
     #The Player N°1 have the option to select the kind of mark in the game
@@ -192,7 +198,10 @@ class Main
     end
     #the function shows the Rules of the game
     def show_draw()
-        puts "DRAW"
+        puts "No more avalaible spaces, consider it a draw"
+        puts "The game will be re-started"
+        puts "loading................"
+        puts "Press any key to continue"
     end
     #The function shows a message when the game has a winner
     def show_winner(player)
