@@ -34,11 +34,11 @@ end
 # | 7 | 8 | 9 |
 # | - | - | - |
 def show_board(board)
-  puts '| - | - | - |'
-  (0..2).each do |i|
+  puts ('| - | - | - |')
+  for i in 0..2 do
     row = '|'
-    3.times do |j|
-      row += ' ' + board.main_board[i][j].to_s + ' |'
+    (3).times do |j|
+        row += ' ' + board.main_board[i][j].to_s + ' |'
     end
     puts row
     puts '| - | - | - |'
@@ -54,18 +54,18 @@ def select_player_mark
   loop do
     mark = gets.chomp.upcase
     if mark != 'X' && mark != 'O'
-      p mark.upcase
-      puts 'Write a correct mark'
+        p mark.upcase
+        puts 'Write a correct mark'
     else
-      return mark
+        return mark
     end
   end
 end
 
 # This function show the name of the players and their marks.
-def show_start_game(main)
-  puts (main.player1.name + ' is: ' + main.player1.identity)
-  puts (main.player2.name + ' is: ' + main.player2.identity)
+def show_start_game(game)
+  puts (game.player1.name + ' is: ' + game.player1.identity)
+  puts (game.player2.name + ' is: ' + game.player2.identity)
   puts 'TIC TAC TOE.. start!'
 end
 
@@ -74,20 +74,19 @@ end
 def select_number
   number = 0
   loop do
-    number = gets.to_i
-    cond = true
-    if number > 9 || number < 1
-      puts 'Write a correct number'
-      cond = false
-    end
-    break if cond
+      number = gets.to_i
+      cond = true
+      if number > 9 || number < 1
+          puts 'Write a correct number'
+          cond = false
+      end
+      break if cond
   end
-  number
+  return number
 end
 
 require '../lib/tic_tac_toe.rb'
 
-<<<<<<< HEAD
 # The game start, until the game has a winner continue the game 
 show_rules() 
 loop do
@@ -103,44 +102,20 @@ loop do
       if game.board.check_choise_player(player_turn, number) 
         game.board.save_choise_player(player_turn, number)
         break 
-=======
-# The game start, until the game has a winner continue the game
-loop do
-  main = TicTacToe.new
-  show_rules
-  mark = select_player_mark
-  main.player1.identity = mark
-  main.player2.identity = mark == 'X' ? 'O' : 'X'
-  show_start_game(main)
-  show_board(main.board)
-  while main.board.have_space
-    player_turn = main.turn
-    puts (player_turn.name + ' turn')
-    loop do
-      number = select_number
-      if main.board.check_choise_player(player_turn, number)
-        break
->>>>>>> 190882972c21cd01c13eafa66c11207ef7f713a3
       else
-        puts 'Choose another number'
+          puts 'Choose another number'
       end
     end
-<<<<<<< HEAD
     show_board(game.board)
     game.winner = game.check_winnner()
     if game.winner
       break
     end
-=======
-    show_board(main.board)
-    main.winner = main.check_winnner
-    break if main.winner
->>>>>>> 190882972c21cd01c13eafa66c11207ef7f713a3
   end
   if game.winner
     show_winner(player_turn)
   elsif
-    show_draw
+    show_draw()
   end
   break if game.winner
 end
