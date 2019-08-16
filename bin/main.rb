@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Show the rules of the game at the beginning
 def show_rules
   puts '*******WELCOME AND GET READY FOR A ROUND OF TIC TAC TOE*******'
@@ -32,11 +34,11 @@ end
 # | 7 | 8 | 9 |
 # | - | - | - |
 def show_board(board)
-  puts ('| - | - | - |')
-  for i in 0..2 do
+  puts '| - | - | - |'
+  (0..2).each do |i|
     row = '|'
-    (3).times do |j|
-        row += ' ' + board.main_board[i][j].to_s + ' |'
+    3.times do |j|
+      row += ' ' + board.main_board[i][j].to_s + ' |'
     end
     puts row
     puts '| - | - | - |'
@@ -52,10 +54,10 @@ def select_player_mark
   loop do
     mark = gets.chomp.upcase
     if mark != 'X' && mark != 'O'
-        p mark.upcase
-        puts 'Write a correct mark'
+      p mark.upcase
+      puts 'Write a correct mark'
     else
-        return mark
+      return mark
     end
   end
 end
@@ -72,49 +74,47 @@ end
 def select_number
   number = 0
   loop do
-      number = gets.to_i
-      cond = true
-      if number > 9 || number < 1
-          puts 'Write a correct number'
-          cond = false
-      end
-      break if cond
+    number = gets.to_i
+    cond = true
+    if number > 9 || number < 1
+      puts 'Write a correct number'
+      cond = false
+    end
+    break if cond
   end
-  return number
+  number
 end
 
 require '../lib/tic_tac_toe.rb'
 
-# The game start, until the game has a winner continue the game 
+# The game start, until the game has a winner continue the game
 loop do
-  main = TicTacToe.new()
-  show_rules() 
-  mark = select_player_mark()
+  main = TicTacToe.new
+  show_rules
+  mark = select_player_mark
   main.player1.identity = mark
   main.player2.identity = mark == 'X' ? 'O' : 'X'
   show_start_game(main)
   show_board(main.board)
-  while (main.board.have_space()) do
-    player_turn = main.turn()
+  while main.board.have_space
+    player_turn = main.turn
     puts (player_turn.name + ' turn')
     loop do
-      number = select_number() 
-      if main.board.check_choise_player(player_turn, number) 
-          break 
+      number = select_number
+      if main.board.check_choise_player(player_turn, number)
+        break
       else
-          puts 'Choose another number'
+        puts 'Choose another number'
       end
     end
     show_board(main.board)
-    main.winner = main.check_winnner()
-    if main.winner
-      break
-    end
+    main.winner = main.check_winnner
+    break if main.winner
   end
   if main.winner
     show_winner(player_turn)
   elsif
-    show_draw()
+    show_draw
   end
   break if main.winner
 end
