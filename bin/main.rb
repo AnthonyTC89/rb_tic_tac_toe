@@ -9,7 +9,7 @@ def show_rules
   puts '***********Have fun*************'
 end
 
-#the function shows the Rules of the game
+# The function shows the Rules of the game
 def show_draw
   puts 'No more avalaible spaces, consider it a draw'
   puts 'The game will be re-started'
@@ -17,13 +17,13 @@ def show_draw
   puts 'Press any key to continue'
 end
 
-#The function shows a message when the game has a winner
+# The function shows a message when the game has a winner
 def show_winner(player)
   puts 'Winner: ' + player.name + "(#{player.identity})" + '. CONGRATULATIONS!!!'
 end
 
-#this function show the content of the grid
-#for the beginning:
+# This function show the content of the grid
+# for the beginning:
 # | - | - | - |
 # | 1 | 2 | 3 |
 # | - | - | - |
@@ -43,10 +43,10 @@ def show_board(board)
   end
 end
 
-#The Player N°1 have the option to select the kind of mark in the game
-#This function finish when 'X' or 'O' were selected, othercases are not allowed
-#After the choising the function show the Mark of each Player and a message for
-#the beginning of the game
+# The Player N°1 have the option to select the kind of mark in the game
+# This function finish when 'X' or 'O' were selected, othercases are not allowed
+# After the choising the function show the Mark of each Player and a message for
+# the beginning of the game
 def select_player_mark
   puts('PLAYER N° 1, select a mark: (X) or (O)')
   loop do
@@ -58,20 +58,17 @@ def select_player_mark
         return mark
     end
   end
-  # main.player1.identity = mark
-  # @player2.identity = mark == 'X' ? 'O' : 'X'
-    
 end
 
-#This function show the name of the players and their marks.
+# This function show the name of the players and their marks.
 def show_start_game(main)
   puts (main.player1.name + ' is: ' + main.player1.identity)
   puts (main.player2.name + ' is: ' + main.player2.identity)
   puts 'TIC TAC TOE.. start!'
 end
 
-#The Players have the option to choose a number in the Grid
-#The numbers allowed are between 1 and 9
+# The Players have the option to choose a number in the Grid
+# The numbers allowed are between 1 and 9
 def select_number
   number = 0
   loop do
@@ -88,7 +85,7 @@ end
 
 require '../lib/tic_tac_toe.rb'
 
-#the game start, until the game has a winner continue the game 
+# The game start, until the game has a winner continue the game 
 loop do
   main = TicTacToe.new()
   show_rules() 
