@@ -1,5 +1,5 @@
 # Show the rules of the game at the beginning
-def show_rules()
+def show_rules
     puts "*******WELCOME AND GET READY FOR A ROUND OF TIC TAC TOE*******"
     puts "PLEASE: make sure to follow the instruction bellow"
     puts "STEP ONE: Two players are needed for a session: Player one and Player two"
@@ -10,7 +10,7 @@ def show_rules()
 end
 
 #the function shows the Rules of the game
-def show_draw()
+def show_draw
     puts "No more avalaible spaces, consider it a draw"
     puts "The game will be re-started"
     puts "loading................"
@@ -47,7 +47,7 @@ end
 #This function finish when "X" or "O" were selected, othercases are not allowed
 #After the choising the function show the Mark of each Player and a message for
 #the beginning of the game
-def select_player_mark()
+def select_player_mark
     puts("PLAYER N° 1, select a mark: (X) or (O)")
     loop do
         mark = gets.chomp.upcase
@@ -72,7 +72,7 @@ end
 
 #The Players have the option to choose a number in the Grid
 #The numbers allowed are between 1 and 9
-def select_number()
+def select_number
     number = 0
     loop do
         number = gets.to_i
