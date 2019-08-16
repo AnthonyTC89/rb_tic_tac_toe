@@ -1,4 +1,4 @@
-#Show the rules of the game at the beginning
+# Show the rules of the game at the beginning
 def show_rules()
     puts "*******WELCOME AND GET READY FOR A ROUND OF TIC TAC TOE*******"
     puts "PLEASE: make sure to follow the instruction bellow"
