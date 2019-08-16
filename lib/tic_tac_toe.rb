@@ -2,7 +2,9 @@ class Player
 	# identity ['X','O']
 	# name ['Player N°1', 'Player N°2']
 	# turn [true, false]
-	attr_accessor :identity, :name, :turn
+
+	attr_writer :turn
+	attr_reader :identity, :name, :turn
 	def initialize(identity, name, turn)    
 		@identity = identity  
 		@name = name  
@@ -12,7 +14,7 @@ end
 
 class Board
 	# main_board: Grid: 3rows, 3columns
-	attr_accessor :main_board
+	attr_reader :main_board
 
 	def initialize
 		@main_board = [['1','2','3'],['4','5','6'],['7','8','9']]
@@ -39,79 +41,46 @@ class Board
 	# if the position in the Grid is free (without 'X' or 'O') return true,
 	# othercase it returns false
 	def check_choise_player(player, number)
+		array_board = @main_board.flatten
+		if array_board[number-1] == 'X' || array_board[number-1] == 'O'
+			return false
+		else
+			return true
+		end
+	end
+
+	def save_choise_player(player, number)
 		case number
 		when 1
-			if @main_board[0][0] == 'X' || @main_board[0][0] == 'O'
-				return false
-			else
-				@main_board[0][0] = player.identity
-				return true
-			end
+			@main_board[0][0] = player.identity
 		when 2
-			if @main_board[0][1] == 'X' || @main_board[0][1] == 'O'
-				return false
-			else
-				@main_board[0][1] = player.identity
-				return true
-			end
+			@main_board[0][1] = player.identity
 		when 3
-			if @main_board[0][2] == 'X' || @main_board[0][2] == 'O'
-				return false
-			else
-				@main_board[0][2] = player.identity
-				return true
-			end
+			@main_board[0][2] = player.identity
 		when 4
-			if @main_board[1][0] == 'X' || @main_board[1][0] == 'O'
-				return false
-			else
-				@main_board[1][0] = player.identity
-				return true
-			end
+			@main_board[1][0] = player.identity
 		when 5
-			if @main_board[1][1] == 'X' || @main_board[1][1] == 'O'
-				return false
-			else
-				@main_board[1][1] = player.identity
-				return true
-			end
+			@main_board[1][1] = player.identity
 		when 6
-			if @main_board[1][2] == 'X' || @main_board[1][2] == 'O'
-				return false
-			else
-				@main_board[1][2] = player.identity
-				return true
-			end
+			@main_board[1][2] = player.identity
 		when 7
-			if @main_board[2][0] == 'X' || @main_board[2][0] == 'O'
-				return false
-			else
-				@main_board[2][0] = player.identity
-				return true
-			end
+			@main_board[2][0] = player.identity
 		when 8
-			if @main_board[2][1] == 'X' || @main_board[2][1] == 'O'
-				return false
-			else
-				@main_board[2][1] = player.identity
-				return true
-			end
+			@main_board[2][1] = player.identity
 		when 9
-			if @main_board[2][2] == 'X' || @main_board[2][2] == 'O'
-				return false
-			else
-				@main_board[2][2] = player.identity
-				return true
-			end
+			@main_board[2][2] = player.identity
 		end
 	end
 end
 
 class TicTacToe
-	attr_accessor :player1, :player2, :board, :winner
-	def initialize()
-		@player1 = Player.new('', 'Player N°1', true)  
-		@player2 = Player.new('', 'Player N°2', false)
+	attr_writer :winner
+	attr_reader :player1, :player2, :board, :winner
+
+	def initialize(mark)
+		mark2 = mark == 'X' ? 'O' : 'X'
+		@player1 = Player.new(mark, 'Player N°1', true)  
+		@player2 = Player.new(mark2, 'Player N°2', false)
 		@board = Board.new()  
 		@winner = false
 	end

@@ -86,36 +86,35 @@ end
 require '../lib/tic_tac_toe.rb'
 
 # The game start, until the game has a winner continue the game 
+show_rules() 
 loop do
-  main = TicTacToe.new()
-  show_rules() 
   mark = select_player_mark()
-  main.player1.identity = mark
-  main.player2.identity = mark == 'X' ? 'O' : 'X'
-  show_start_game(main)
-  show_board(main.board)
-  while (main.board.have_space()) do
-    player_turn = main.turn()
+  game = TicTacToe.new(mark)
+  show_start_game(game)
+  show_board(game.board)
+  while (game.board.have_space()) do
+    player_turn = game.turn()
     puts (player_turn.name + ' turn')
     loop do
       number = select_number() 
-      if main.board.check_choise_player(player_turn, number) 
-          break 
+      if game.board.check_choise_player(player_turn, number) 
+        game.board.save_choise_player(player_turn, number)
+        break 
       else
           puts 'Choose another number'
       end
     end
-    show_board(main.board)
-    main.winner = main.check_winnner()
-    if main.winner
+    show_board(game.board)
+    game.winner = game.check_winnner()
+    if game.winner
       break
     end
   end
-  if main.winner
+  if game.winner
     show_winner(player_turn)
   elsif
     show_draw()
   end
-  break if main.winner
+  break if game.winner
 end
 puts 'THANKS FOR PLAYING TIC TAC TOE'
