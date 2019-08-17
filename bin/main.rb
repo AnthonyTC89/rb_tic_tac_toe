@@ -54,7 +54,6 @@ def select_player_mark
   end
 end
 
-
 # This function show the name of the players and their marks.
 def show_start_game(game)
   puts game.player1.name + ' is: ' + game.player1.identity # use string interpulation talk to Anthony
