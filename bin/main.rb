@@ -102,7 +102,7 @@ loop do
     game.winner = game.check_winnner
     break if game.winner
   end
-# Roy added this line, i reduced the block if else statement to one line,
+  # Roy added this line, i reduced the block if else statement to one line,
   game.winner ? show_winner(player_turn) : show_draw
   break if game.winner
 end
