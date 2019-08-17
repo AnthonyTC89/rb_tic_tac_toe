@@ -58,6 +58,7 @@ class Board
       @main_board[2][2] = player.identity
     end
   end
+# rubocop:enable
 end
 
 class TicTacToe
@@ -108,5 +109,6 @@ class TicTacToe
     end
 
     false
+# rubocop:enable
   end
 end
