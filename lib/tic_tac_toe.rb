@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Player
-# i deleted some comments from here
+  # i deleted some comments from here
 
   attr_writer :turn
   attr_reader :identity, :name, :turn
@@ -13,19 +13,19 @@ class Player
 end
 
 class Board
-# main_board: Grid: 3rows, 3columns
+  # main_board: Grid: 3rows, 3columns
   attr_reader :main_board
 
   def initialize
     @main_board = [%w[1 2 3], %w[4 5 6], %w[7 8 9]]
   end
 
-# i deleted some comments from here
+  # i deleted some comments from here
   def have_space
     @main_board.flatten.any? { |mark| mark != 'X' && mark != 'O' }
   end
 
-# i deleted some comments from here
+  # i deleted some comments from here
   def check_choise_player(_player, number)
     array_board = @main_board.flatten
     if array_board[number - 1] == 'X' || array_board[number - 1] == 'O'
@@ -36,7 +36,7 @@ class Board
   end
 
   def save_choise_player(player, number)
-# rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
+    # rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
     case number
     when 1
       @main_board[0][0] = player.identity
@@ -73,7 +73,7 @@ class TicTacToe
     @winner = false
   end
 
-# the function returns the player who have the turn
+  # the function returns the player who have the turn
   def turn
     if @player1.turn
       @player1.turn = false
@@ -86,10 +86,9 @@ class TicTacToe
     end
   end
 
-# i deleted some comments from here
+  # i deleted some comments from here
   def check_winnner
     arr_b = @board.main_board.flatten
-# rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
     if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
       return true
     elsif arr_b[3] == arr_b[4] && arr_b[4] == arr_b[5]
