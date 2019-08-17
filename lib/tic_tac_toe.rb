@@ -58,7 +58,7 @@ class Board
       @main_board[2][2] = player.identity
     end
   end
-  # rubocop:enable
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
 
 class TicTacToe
@@ -87,6 +87,7 @@ class TicTacToe
   end
 
   # i deleted some comments from here
+    # rubocop:disable Metrics/CyclomaticComplexity
   def check_winnner
     arr_b = @board.main_board.flatten
     if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
@@ -109,5 +110,5 @@ class TicTacToe
 
     false
   end
-  # rubocop:enable
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
