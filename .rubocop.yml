@@ -6,12 +6,12 @@ AllCops:
     - 'Guardfile'
     - 'Rakefile'
   DisplayCopNames: true
-
+# configures the length of a line or number of columns
 Metrics/LineLength:
-  Max: 120
+  Max: 200
 Metrics/MethodLength:
   Include: ['app/controllers/*']
-  Max: 20
+  Max: 150
 Metrics/AbcSize:
   Include: ['app/controllers/*']
   Max: 30
@@ -26,6 +26,7 @@ Style/ClassAndModuleChildren:
   Enabled: false
 Style/For:
   Enabled: false
+# configures guard clause for conditional statements
 Style/GuardClause:
   Enabled: false
 

@@ -102,11 +102,8 @@ loop do
     game.winner = game.check_winnner
     break if game.winner
   end
-  if game.winner
-    show_winner(player_turn)
-  elsif
-    show_draw
-  end
+# Roy added this line, i reduced the block if else statement to one line,
+  game.winner ? show_winner(player_turn) : show_draw
   break if game.winner
 end
 puts 'THANKS FOR PLAYING TIC TAC TOE'
