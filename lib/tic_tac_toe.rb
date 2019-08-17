@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class Player
-  # identity ['X','O']
-  # name ['Player N°1', 'Player N°2']
-  # turn [true, false]
+  # i deleted some comments from here
 
   attr_writer :turn
   attr_reader :identity, :name, :turn
@@ -22,26 +20,12 @@ class Board
     @main_board = [%w[1 2 3], %w[4 5 6], %w[7 8 9]]
   end
 
-  # return true or false
-  # 1st
-  # [['1','2','3'],['4','5','6'],['7','8','9']] => ['1','2','3','4','5','6','7','8','9']
-  # 2nd
-  # compare if in the array exist 'X' or 'O'
+  # i deleted some comments from here
   def have_space
     @main_board.flatten.any? { |mark| mark != 'X' && mark != 'O' }
   end
 
-  # this function save 'X' or 'O' in the number selected of the Grid
-  # e.g. if Player N°1 ('X') selected the number 2 in the first turn:
-  # | - | - | - |
-  # | 1 | X | 3 |
-  # | - | - | - |
-  # | 4 | 5 | 6 |
-  # | - | - | - |
-  # | 7 | 8 | 9 |
-  # | - | - | - |
-  # if the position in the Grid is free (without 'X' or 'O') return true,
-  # othercase it returns false
+ # i deleted some comments from here
   def check_choise_player(_player, number)
     array_board = @main_board.flatten
     if array_board[number - 1] == 'X' || array_board[number - 1] == 'O'
@@ -100,17 +84,7 @@ class TicTacToe
     end
   end
 
-  # This section is the winning condition of the game
-  # The function compare the content of the Grid
-  # e.g. if the Grid has:
-  # | - | - | - |     # | - | - | - |
-  # | X | X | X |     # | X | O | X |
-  # | - | - | - |     # | - | - | - |
-  # | O | 5 | O |     # | 4 | X | 6 |
-  # | - | - | - |     # | - | - | - |
-  # | 7 | 8 | 9 |     # | X | 8 | O |
-  # | - | - | - |     # | - | - | - |
-  # the winner is the Player with the mark 'X'
+  # i deleted some comments from here
   def check_winnner
     arr_b = @board.main_board.flatten
     if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]

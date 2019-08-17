@@ -24,15 +24,7 @@ def show_winner(player)
   puts 'Winner: ' + player.name + "(#{player.identity})" + '. CONGRATULATIONS!!!'
 end
 
-# This function show the content of the grid
-# for the beginning:
-# | - | - | - |
-# | 1 | 2 | 3 |
-# | - | - | - |
-# | 4 | 5 | 6 |
-# | - | - | - |
-# | 7 | 8 | 9 |
-# | - | - | - |
+# i deleted some comments from here
 def show_board(board)
   puts '| - | - | - |'
   (0..2).each do |i|
