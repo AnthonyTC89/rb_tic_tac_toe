@@ -37,7 +37,7 @@ def show_board(board)
   end
 end
 
-# The Player N°1 have the option to select the kind of mark in the game
+# The Player Number one have the option to select the kind of mark in the game
 # This function finish when 'X' or 'O' were selected, othercases are not allowed
 # After the choising the function show the Mark of each Player and a message for
 # the beginning of the game
@@ -53,6 +53,7 @@ def select_player_mark
     end
   end
 end
+
 
 # This function show the name of the players and their marks.
 def show_start_game(game)
