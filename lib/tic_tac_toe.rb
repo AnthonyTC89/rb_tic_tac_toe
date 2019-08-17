@@ -25,7 +25,7 @@ class Board
     @main_board.flatten.any? { |mark| mark != 'X' && mark != 'O' }
   end
 
- # i deleted some comments from here
+  # i deleted some comments from here
   def check_choise_player(_player, number)
     array_board = @main_board.flatten
     if array_board[number - 1] == 'X' || array_board[number - 1] == 'O'
