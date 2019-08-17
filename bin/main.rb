@@ -88,7 +88,7 @@ loop do
   show_board(game.board)
   while game.board.have_space
     player_turn = game.turn
-    puts player_turn.name + ' turn'  # use string interpulation, talk to Anthony
+    puts player_turn.name + ' turn' # use string interpulation, talk to Anthony
     loop do
       number = select_number
       if game.board.check_choise_player(player_turn, number)
