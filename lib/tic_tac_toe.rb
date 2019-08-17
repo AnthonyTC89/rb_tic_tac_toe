@@ -57,7 +57,7 @@ class Board
       @main_board[2][2] = player.identity
     end
   end
-  # rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
+  # rubocop:enable
 end
 
 class TicTacToe
