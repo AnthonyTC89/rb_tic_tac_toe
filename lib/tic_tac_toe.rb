@@ -35,30 +35,32 @@ class Board
     end
   end
 
+# rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
   def save_choise_player(player, number)
     case number
-    when 1
-      @main_board[0][0] = player.identity
-    when 2
-      @main_board[0][1] = player.identity
-    when 3
-      @main_board[0][2] = player.identity
-    when 4
-      @main_board[1][0] = player.identity
-    when 5
-      @main_board[1][1] = player.identity
-    when 6
-      @main_board[1][2] = player.identity
-    when 7
-      @main_board[2][0] = player.identity
-    when 8
-      @main_board[2][1] = player.identity
-    when 9
-      @main_board[2][2] = player.identity
+      when 1
+        @main_board[0][0] = player.identity
+      when 2
+        @main_board[0][1] = player.identity
+      when 3
+        @main_board[0][2] = player.identity
+      when 4
+        @main_board[1][0] = player.identity
+      when 5
+        @main_board[1][1] = player.identity
+      when 6
+        @main_board[1][2] = player.identity
+      when 7
+        @main_board[2][0] = player.identity
+      when 8
+        @main_board[2][1] = player.identity
+      when 9
+        @main_board[2][2] = player.identity
     end
   end
-  # rubocop:enable
+   # rubocop:enable
 end
+ 
 
 class TicTacToe
   attr_writer :winner
@@ -86,6 +88,7 @@ class TicTacToe
   end
 
   # i deleted some comments from here
+  # rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
   def check_winnner
     arr_b = @board.main_board.flatten
     if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
@@ -108,4 +111,5 @@ class TicTacToe
 
     false
   end
+  # rubocop:enable
 end
