@@ -21,7 +21,7 @@ end
 
 # The function shows a message when the game has a winner
 def show_winner(player)
-  puts 'Winner: ' + player.name + "(#{player.identity})" + '. CONGRATULATIONS!!!'
+  puts 'Winner: ' + player.name + "(#{player.identity})" + '. CONGRATULATIONS!!!' # string interpulation, talk to Anthony
 end
 
 # i deleted some comments from here
@@ -42,7 +42,7 @@ end
 # After the choising the function show the Mark of each Player and a message for
 # the beginning of the game
 def select_player_mark
-  puts('PLAYER N° 1, select a mark: (X) or (O)')
+  puts 'PLAYER N° 1, select a mark: (X) or (O)'
   loop do
     mark = gets.chomp.upcase
     if mark != 'X' && mark != 'O'
@@ -57,8 +57,8 @@ end
 
 # This function show the name of the players and their marks.
 def show_start_game(game)
-  puts (game.player1.name + ' is: ' + game.player1.identity)
-  puts (game.player2.name + ' is: ' + game.player2.identity)
+  puts game.player1.name + ' is: ' + game.player1.identity # use string interpulation talk to Anthony
+  puts game.player2.name + ' is: ' + game.player2.identity
   puts 'TIC TAC TOE.. start!'
 end
 
@@ -89,7 +89,7 @@ loop do
   show_board(game.board)
   while game.board.have_space
     player_turn = game.turn
-    puts (player_turn.name + ' turn')
+    puts player_turn.name + ' turn'  # use string interpulation, talk to Anthony
     loop do
       number = select_number
       if game.board.check_choise_player(player_turn, number)
