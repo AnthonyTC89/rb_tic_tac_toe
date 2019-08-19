@@ -87,8 +87,13 @@ class TicTacToe
   end
 
   # i deleted some comments from here
+<<<<<<< HEAD
   # rubocop:disable Metrics/CyclomaticComplexity
   def check_winnner 
+=======
+  # rubocop:disable
+  def check_winnner
+>>>>>>> d3a9be401c02e20b22444a6a23d893941e2586d1
     arr_b = @board.main_board.flatten
     if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
       return true
@@ -107,7 +112,8 @@ class TicTacToe
     elsif arr_b[2] == arr_b[4] && arr_b[4] == arr_b[6]
       return true
     end
-    return false
+
+    false
   end
   # rubocop:enable Metrics/CyclomaticComplexity
 end
