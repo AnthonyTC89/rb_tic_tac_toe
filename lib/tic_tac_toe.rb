@@ -33,7 +33,8 @@ class Board
     else
       return true
     end
-  end 
+  end
+
   # rubocop:disable Metrics/CyclomaticComplexity
   def save_choise_player(player, number)
     case number
@@ -106,6 +107,7 @@ class TicTacToe
     elsif arr_b[2] == arr_b[4] && arr_b[4] == arr_b[6]
       return true
     end
+
     false
   end
   # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
