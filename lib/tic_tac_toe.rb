@@ -107,6 +107,7 @@ class TicTacToe
     elsif arr_b[2] == arr_b[4] && arr_b[4] == arr_b[6]
       return true
     end
+
     false
   end
   # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
