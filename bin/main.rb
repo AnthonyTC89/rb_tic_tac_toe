@@ -79,8 +79,6 @@ def select_number
   number
 end
 
-
-
 # The game start, until the game has a winner continue the game
 show_rules
 loop do
@@ -107,6 +105,5 @@ loop do
   # Roy added this line, i reduced the block if else statement to one line,
   game.winner ? show_winner(player_turn) : show_draw
   break if game.winner
- 
 end
 puts 'THANKS FOR PLAYING TIC TAC TOE'
