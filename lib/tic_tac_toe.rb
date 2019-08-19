@@ -88,7 +88,7 @@ class TicTacToe
 
   # i deleted some comments from here
   # rubocop:disable
-  def check_winnner 
+  def check_winnner
     arr_b = @board.main_board.flatten
     if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
       return true
@@ -107,7 +107,8 @@ class TicTacToe
     elsif arr_b[2] == arr_b[4] && arr_b[4] == arr_b[6]
       return true
     end
-    return false
+
+    false
   end
   # rubocop:enable
 end
