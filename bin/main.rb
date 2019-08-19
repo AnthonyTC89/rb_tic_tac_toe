@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require '../lib/tic_tac_toe.rb'
+
 # Show the rules of the game at the beginning
 def show_rules
   puts '*******WELCOME AND GET READY FOR A ROUND OF TIC TAC TOE*******'
@@ -21,7 +23,7 @@ end
 
 # The function shows a message when the game has a winner
 def show_winner(player)
-  puts 'Winner: ' + player.name + "(#{player.identity})" + '. CONGRATULATIONS!!!' # string interpulation, talk to Anthony
+  puts "Winner: #{player.name} #{player.identity} CONGRATULATIONS!!!"
 end
 
 # i deleted some comments from here
@@ -56,8 +58,8 @@ end
 
 # This function show the name of the players and their marks.
 def show_start_game(game)
-  puts game.player1.name + ' is: ' + game.player1.identity # use string interpulation talk to Anthony
-  puts game.player2.name + ' is: ' + game.player2.identity
+  puts "#{game.player1.name} is: #{game.player1.identity}"
+  puts "#{game.player2.name} is: #{game.player2.identity}"
   puts 'TIC TAC TOE.. start!'
 end
 
@@ -77,7 +79,7 @@ def select_number
   number
 end
 
-require '../lib/tic_tac_toe.rb'
+
 
 # The game start, until the game has a winner continue the game
 show_rules
@@ -86,9 +88,9 @@ loop do
   game = TicTacToe.new(mark)
   show_start_game(game)
   show_board(game.board)
-  while game.board.have_space
+  while game.board.space?
     player_turn = game.turn
-    puts player_turn.name + ' turn' # use string interpulation, talk to Anthony
+    puts "#{player_turn.name} turn" # use string interpulation, talk to Anthony
     loop do
       number = select_number
       if game.board.check_choise_player(player_turn, number)
@@ -105,5 +107,6 @@ loop do
   # Roy added this line, i reduced the block if else statement to one line,
   game.winner ? show_winner(player_turn) : show_draw
   break if game.winner
+ 
 end
 puts 'THANKS FOR PLAYING TIC TAC TOE'

@@ -21,7 +21,7 @@ class Board
   end
 
   # i deleted some comments from here
-  def have_space
+  def space?
     @main_board.flatten.any? { |mark| mark != 'X' && mark != 'O' }
   end
 
@@ -35,7 +35,7 @@ class Board
     end
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable
   def save_choise_player(player, number)
     case number
     when 1
@@ -87,7 +87,8 @@ class TicTacToe
   end
 
   # i deleted some comments from here
-  def check_winnner
+  # rubocop:disable
+  def check_winnner 
     arr_b = @board.main_board.flatten
     if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
       return true
@@ -106,8 +107,7 @@ class TicTacToe
     elsif arr_b[2] == arr_b[4] && arr_b[4] == arr_b[6]
       return true
     end
-
-    false
+    return false
   end
   # rubocop:enable
 end
