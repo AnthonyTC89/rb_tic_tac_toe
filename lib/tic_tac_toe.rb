@@ -33,7 +33,8 @@ class Board
     else
       return true
     end
-  end
+  end 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def save_choise_player(player, number)
     case number
     when 1
@@ -85,12 +86,8 @@ class TicTacToe
   end
 
   # i deleted some comments from here
-<<<<<<< HEAD
-  def check_winnner 
-=======
-  # rubocop:disable
+  # rubocop:disable Metrics/CyclomaticComplexity
   def check_winnner
->>>>>>> d3a9be401c02e20b22444a6a23d893941e2586d1
     arr_b = @board.main_board.flatten
     if arr_b[0] == arr_b[1] && arr_b[1] == arr_b[2]
       return true
@@ -109,7 +106,6 @@ class TicTacToe
     elsif arr_b[2] == arr_b[4] && arr_b[4] == arr_b[6]
       return true
     end
-
     false
   end
   # rubocop:enable Metrics/CyclomaticComplexity
