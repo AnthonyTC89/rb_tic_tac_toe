@@ -20,7 +20,7 @@ Object Oriented Programming
 4. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
 5. When all 9 squares are full, the game is a DRAW and the game start again.
 
-Photo
+## Photo
 <img src="https://res.cloudinary.com/it-s-tech/image/upload/v1585171957/Screenshot_from_2020-03-25_22-30-40_ge0rbz.png">
 
 ## Authors:
