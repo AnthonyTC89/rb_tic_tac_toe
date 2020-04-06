@@ -27,5 +27,5 @@ This game is built using Ruby and is played on the terminal. The purpose of this
 
 :bust_in_silhouette: [Anthony Tapia](https://github.com/AnthonyTC89)
 * Gihub: [Anthony Tapia](https://github.com/AnthonyTC89)
-* Email: [nyagaandreroy@gmail.com](mailto:ptonyptc@gmail.com)
-* Linkedin: [Roy Nyaga](https://www.linkedin.com/in/anthony-tapia-cossio/)
+* Email: [ptonyptc@gmail.com](mailto:ptonyptc@gmail.com)
+* Linkedin: [Anthony Tapia](https://www.linkedin.com/in/anthony-tapia-cossio/)
