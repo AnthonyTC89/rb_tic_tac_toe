@@ -19,14 +19,6 @@ This game is built using Ruby and is played on the terminal. The purpose of this
  ```
  5. When all the spaces on the board get selected without a winner, the game is a draw and restarts.
 
-### Instruccions for the game
-
-1. It's necessary to have installed [Ruby](https://www.ruby-lang.org/en/) installed on your computer. 
-2. Clone or download a copy of this repo on your computer.
-3. Open your project to the bin directory.
-4. Start the game using the command. 
-5. When all the spaces on the board get selected without a winner, the game is a draw and restarts.
-
 ### Author
 :bust_in_silhouette: [Nyaga Andre Roy](https://github.com/RoyNyaga)
 * Gihub: [RoyNyaga](https://github.com/RoyNyaga)
