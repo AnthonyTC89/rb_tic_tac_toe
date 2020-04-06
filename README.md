@@ -19,7 +19,7 @@ This game is built using Ruby and is played on the terminal. The purpose of this
  ```
  5. When all the spaces on the board get selected without a winner, the game is a draw and restarts.
 
-### Author
+### Authors
 :bust_in_silhouette: [Nyaga Andre Roy](https://github.com/RoyNyaga)
 * Gihub: [RoyNyaga](https://github.com/RoyNyaga)
 * Email: [nyagaandreroy@gmail.com](mailto:nyagaandreroy@gmail.com)
