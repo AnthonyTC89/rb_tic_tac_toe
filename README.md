@@ -5,7 +5,7 @@
 ### About
 This game is built using Ruby and is played on the terminal. The purpose of this project is to put in practice the concept of Object Oriented Program. 
 
-### Technology Used: 
+### Technology Used
 * Ruby
 
 ### Installation And Usage
@@ -19,7 +19,7 @@ This game is built using Ruby and is played on the terminal. The purpose of this
  ```
  5. When all the spaces on the board get selected without a winner, the game is a draw and restarts.
 
-### Instruccions for the game.
+### Instruccions for the game
 
 1. It's necessary to have installed [Ruby](https://www.ruby-lang.org/en/) installed on your computer. 
 2. Clone or download a copy of this repo on your computer.
