@@ -17,6 +17,7 @@ This game is built using Ruby and is played on the terminal. The purpose of this
  ```
  ruby main.rb
  ```
+ 5. When all the spaces on the board get selected without a winner, the game is a draw and restarts.
 
 ### Instruccions for the game.
 
