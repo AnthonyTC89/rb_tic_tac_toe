@@ -20,6 +20,7 @@ This game is built using Ruby and is played on the terminal. The purpose of this
  5. When all the spaces on the board get selected without a winner, the game is a draw and restarts.
  
 ### Future Features
+* Allowing users to play against the computer.
 * Building a graphical user interface for the game.
 
 ### Authors
